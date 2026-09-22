@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+  profil.html — Halaman Profil Saya
+  PABW 2026/2027 · Pertemuan 3
+  Nama : Endah Ayu Inten Sari
+  NIM  : 25523254
+  Kelas: A
+-->
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jejak Perjalanan Aku</title>
+</head>
+<body>
+
+  <header>
+    <h1>Jejak Perjalanan Aku</h1>
+    <p id="tentang">
+      Daftar tempat yang pernah saya kunjungi berisi daftar beberapa tempat
+      yang pernah saya kunjungi, lengkap dengan lokasi dan waktu berkunjung.
+    </p>
+
+    <nav aria-label="Navigasi utama">
+      <ul>
+        <li><a href="#tentang">Tentang Saya</a></li>
+        <li><a href="#bagian-1">Tempat yang Pernah Dikunjungi</a></li>
+        <li><a href="#bagian-2">Galeri</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="bagian-1">
+      <h2>Tempat yang Pernah Dikunjungi</h2>
+      <p>Berikut tempat-tempat yang pernah saya kunjungi.</p>
+
+      <table>
+        <caption>Daftar Tempat yang Pernah Saya Kunjungi</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nama Tempat</th>
+            <th scope="col">Lokasi</th>
+            <th scope="col">Waktu Kunjungan</th>
+            <th scope="col">Kegiatan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Pantai Parangtritis</th>
+            <td>Yogyakarta</td>
+            <td>2025</td>
+            <td>Menikmati pemandangan</td>
+          </tr>
+          <tr>
+            <th scope="row">Malioboro</th>
+            <td>Yogyakarta</td>
+            <td>2025</td>
+            <td>Jalan-jalan</td>
+          </tr>
+          <tr>
+            <th scope="row">Candi Borobudur</th>
+            <td>Magelang</td>
+            <td>2025</td>
+            <td>Berwisata</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="bagian-2">
+      <h2>Galeri</h2>
+      <p>Berikut salah satu foto dari perjalanan saya, dan formulir untuk menambah catatan tempat baru.</p>
+
+      <!-- TODO: ganti nama berkas gambar sesuai foto milik Anda sendiri -->
+      <figure>
+        <img src="tempat-1.webp"
+             alt="Pantai Parangtritis saat sore hari dengan ombak besar dan langit oranye"
+             width="640" height="360" loading="lazy">
+        <figcaption>Pantai Parangtritis, salah satu tempat yang pernah saya kunjungi.</figcaption>
+      </figure>
+
+      <h3>Tambah Catatan Perjalanan</h3>
+      <form action="/simpan" method="post">
+        <p>
+          <label for="nama-tempat">Nama tempat</label><br>
+          <input type="text" id="nama-tempat" name="nama-tempat" required>
+        </p>
+        <p>
+          <label for="lokasi">Lokasi</label><br>
+          <input type="text" id="lokasi" name="lokasi" required>
+        </p>
+        <p>
+          <label for="waktu">Waktu kunjungan</label><br>
+          <input type="date" id="waktu" name="waktu" required>
+        </p>
+        <button type="submit">Simpan</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Endah Ayu Inten Sari · NIM 25523254 · 2026</p>
+  </footer>
+
+</body>
+</html>
