@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+  KERANGKA AWAL — Halaman Profil Saya
+  PABW 2026/2027 · Pertemuan 3
+
+  Cara pakai:
+  1. Salin berkas ini, ganti nama menjadi profil.html
+  2. Ganti setiap tulisan TODO dengan isi milik Anda SENDIRI
+  3. Simpan, lalu buka di peramban (F5 untuk memuat ulang)
+  4. Kerjakan berurutan mengikuti Lembar B, C, D, dan E pada worksheet
+
+  Jangan menghapus komentar TODO sebelum bagian itu Anda kerjakan —
+  komentar itu adalah daftar periksa Anda sendiri.
+-->
+<html lang="id">
+<head>
+  <title>Jejak perjalanan aku</title>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+<body>
+  <header>
+    <h1>Jejak perjalanan saya</h1>
+    <p id="tentang">Daftar tempat yang pernah saya kunjungi berisi daftar beberapa tempat yang pernah saya kunjungi, lengkap dengan lokasi, dan  waktu berkunjung</p>
+  </header>
+  <nav aria-label="Navigasi utama">
+  <a href="#Tentang.html">Tentang saya</a> |
+  <a href="#Tempat.html">Tempat yang pernah saya kunjungi</a> |
+  <a href="#Galeri">Galeri</a> |
+</nav>
+
+<main>
+     <section id="bagian-1">
+          <h2>Tempat yang pernah dikunjungi</h2>
+          <p>Berikut tempat-tempat yang pernah saya kunjungi</p>
+
+          <table>
+        <caption>Daftar Tempat yang Pernah Saya Kunjungi</caption>
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama Tempat</th>
+            <th scope="col">Kota</th>
+            <th scope="col">Waktu Berkunjung</th>
+            <th scope="col">Kegiatan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Pantai Parangtritis</td>
+            <td>Yogyakarta</td>
+            <td>2025</td>
+            <td>Menikmati pemandangan</td>
+          </tr>
+        </tbody>
+      </table>
+     </section>
+
+     
+          
+     <section id="bagian-2">
+          <h2>Galeri</h2>
+          <p>Berikut beberapa foto dari perjalanan saya</p>
+
+     <figure>
+        <img src="tempat-1.jpg"
+             alt="Pantai Parangtritis saat sore hari dengan ombak besar dan langit oranye"
+             width="720" height="405" loading="lazy">
+        <figcaption>Pantai Parangtritis, salah satu tempat yang pernah saya kunjungi.</figcaption>
+     </figure>
+
+     <form>
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="pesan">Pesan:</label>
+        <input type="text" id="pesan" name="pesan" required>
+        <br><br>
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Nama: Ayu | NIM: 25523254 | 2026</p>
+  </footer>
+
+     </section>
+          
+</body>
+</html>
