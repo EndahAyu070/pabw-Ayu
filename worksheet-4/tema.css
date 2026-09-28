@@ -13,3 +13,15 @@
     --shadow-1:      0 1px 3px rgba(0, 0, 0, 0.45);
   }
 }
+body:has(#tema:checked) {
+  --color-bg: #172117;
+  --color-fg: #E8F0E5;
+  --color-surface: #243322;
+  --color-border: #40523A;
+
+  --color-primary: #8FB27F;
+  --color-danger: #F87171;
+  --color-focus: #8FB27F;
+
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.45);
+}

@@ -18,3 +18,8 @@
 Kriteria selesai saya: mengubah --color-primary di satu baris
 harus mengubah warna tombol, tautan, judul, dan garis fokus.
 
+## Pertemuan 5 - Flexbox and Grid
+### Penggunaan AI
+Saya menggunakan AI sebagai alat bantu untuk memahami materi Flexbox dan Grid, mencari solusi ketika mengalami kesulitan dalam penulisan kode, serta membantu mengecek dan memperbaiki kode. Hasil dari AI kemudian saya sesuaikan dengan kebutuhan tugas dan saya uji kembali secara mandiri.
+
+
