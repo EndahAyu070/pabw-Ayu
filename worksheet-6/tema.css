@@ -1,0 +1,27 @@
+/* Ikut pengaturan sistem: lapis semantik saja yang diganti */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #261A14;
+    --color-fg: #FFF7ED;
+    --color-surface: #38251C;
+    --color-border: #A8643A;
+    --color-primary: #E76F35;
+    --color-danger: #F87171;
+    --color-focus: #FB923C;
+
+    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+}
+
+
+:root:has(#tema:checked) {
+  --color-bg: #261A14;
+  --color-fg: #FFF7ED;
+  --color-surface: #38251C;
+  --color-border: #A8643A;
+  --color-primary: #E76F35;
+  --color-danger: #F87171;
+  --color-focus: #FB923C;
+
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.45);
+}

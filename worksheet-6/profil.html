@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jejak perjalanan saya</title>
+
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="komponen.css">
+  <link rel="stylesheet" href="tema.css">
+  <link rel="stylesheet" href="responsif.css">
+</head>
+
+<body>
+<div class="page">
+
+  <header>
+    <div class="wadah header-baris">
+    
+      <div>
+        <p class="kicker">Portofolio perjalanan</p>
+        <h1>Jejak perjalanan saya</h1>
+        <p>Catatan tempat yang pernah saya kunjungi, lengkap dengan lokasi dan waktu berkunjung.</p>
+      </div>
+      <div>
+        <input type="checkbox" id="tema" class="pengalih-tema">
+        <label for="tema" class="tombol-tema">Tema gelap</label>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Navigasi utama">
+    <div class="wadah">
+      <ul>
+      <li><a href="#tentang">Tentang saya</a></li>
+      <li><a href="#tempat">Tempat yang pernah saya kunjungi</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      </ul>
+    </div>
+  </nav>
+  </nav>
+
+  <main class="wadah">
+    <div class="utama">
+    <div class="utama">
+
+      <section id="tentang">
+        <h2>Tentang saya</h2>
+        <p>Halo, saya Ayu, mahasiswa informatika yang suka menjelajah tempat baru dan mengabadikannya lewat foto. Halaman ini berisi daftar tempat yang pernah saya kunjungi.</p>
+      </section>
+
+      <section id="tempat">
+        <h2>Tempat yang pernah saya kunjungi</h2>
+        <p>Berikut tempat-tempat yang pernah saya kunjungi.</p>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Daftar tempat yang pernah saya kunjungi</caption>
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Tempat</th>
+                <th scope="col">Kota</th>
+                <th scope="col">Waktu Berkunjung</th>
+                <th scope="col">Kegiatan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Pantai Parangtritis</td>
+                <td>Yogyakarta</td>
+                <td>2025</td>
+                <td>Menikmati pemandangan</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Gunung Sindoro</td>
+                <td>Wonosobo</td>
+                <td>2025</td>
+                <td>Hiking dan menikmati pemandangan</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Tugu Yogyakarta</td>
+                <td>Yogyakarta</td>
+                <td>2025</td>
+                <td>Wisata kuliner</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="galeri">
+        <h2>Galeri</h2>
+        <p>Berikut beberapa foto dari perjalanan saya.</p>
+
+        <div class="grid">
+          <figure class="kartu galeri-kartu">
+            <div class="bingkai">
+              <img src="tempat-1.jpg"
+                   alt="Pantai Parangtritis saat sore hari dengan ombak besar dan langit oranye"
+                   width="330" height="220" loading="lazy">
+            </div>
+            <figcaption>Pantai Parangtritis, Yogyakarta.</figcaption>
+          </figure>
+          <figure class="kartu galeri-kartu">
+            <div class="bingkai">
+              <img src="tempat-2.webp" alt="Melihat sunrise dari gunung Sindoro dengan kabut tipis di sekitarnya"
+                   width="330" height="220" loading="lazy">
+            </div>
+            <figcaption>Gunung Sindoro, Wonosobo.</figcaption>
+          </figure>
+
+          <figure class="kartu galeri-kartu">
+            <div class="bingkai">
+              <img src="tempat-3.jpg" alt="Tugu Yogyakarta dari kejauhan"
+                   width="330" height="220" loading="lazy">
+            </div>
+            <figcaption>Tugu Yogyakarta, Yogyakarta.</figcaption>
+          </figure>
+        </div>
+
+        <form class="form-kolom">
+          <h3>Tinggalkan pesan</h3>
+
+          <div class="form-kolom">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+            <span class="pesan-galat">Nama wajib diisi.</span>
+          </div>
+
+          <div class="form-kolom">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="pesan-galat">Masukkan email yang valid.</span>
+          </div>
+
+          <div class="form-kolom">
+            <label for="pesan">Pesan:</label>
+            <textarea id="pesan" name="pesan" required></textarea>
+            <span class="pesan-galat">Pesan wajib diisi.</span>
+          </div>
+
+          <button type="submit">Kirim</button>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wadah">
+      <p>Nama: Ayu | NIM: 25523254 | 2026</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
