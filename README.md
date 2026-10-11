@@ -22,4 +22,6 @@ harus mengubah warna tombol, tautan, judul, dan garis fokus.
 ### Penggunaan AI
 Saya menggunakan AI sebagai alat bantu untuk memahami materi Flexbox dan Grid, mencari solusi ketika mengalami kesulitan dalam penulisan kode, serta membantu mengecek dan memperbaiki kode. Hasil dari AI kemudian saya sesuaikan dengan kebutuhan tugas dan saya uji kembali secara mandiri.
 
-
+## pertemuan 8 
+Dalam pengerjaan tugas ini, saya menggunakan AI sebagai alat bantu untuk memahami materi JavaScript ES6+, terutama dalam memahami penggunaan map(), filter(), dan find(), serta membantu mencari dan memahami penyebab error pada kode. AI juga membantu memberikan penjelasan ketika saya mengalami kesulitan dalam memahami soal dan kode.
+Kode, data profil, data proyek, dan isi halaman saya sesuaikan dan kerjakan sendiri. Saya juga melakukan pengujian kode, memperbaiki error, dan memastikan hasilnya berjalan sesuai dengan tugas yang diberikan.
