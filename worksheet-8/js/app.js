@@ -23,3 +23,16 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
+
+const daftarProyek = [
+  { judul: "Aplikasi Laporan Kejahatan Digital", tahun: 2026, selesai: true },
+  { judul: "Aplikasi Manajement Katering", tahun: 2026, selesai: true },
+];
+console.table(profil.keahlian);
+console.table(daftarProyek);
+
+const selesai = daftarProyek.filter((proyek) => proyek.selesai);
+console.table(selesai);
+
+const projekKatering = daftarProyek.find((proyek) => proyek.judul === "Aplikasi Manajement Katering");
+console.log(projekKatering);
