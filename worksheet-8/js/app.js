@@ -4,6 +4,10 @@ const profil = {
   keahlian: ["HTML", "CSS", "JavaScript"],
   jumlahProyek: 2
 };
+const profilSalinan = { ...profil };
+
+console.log({ ...profil });
+console.log({ profil });
 
 const namaLengkap = "Endah Ayu Inten Sari";
 const kalimatPeran = "Mahasiswa Informatika yang suka menjelajah tempat baru";
@@ -31,6 +35,8 @@ const daftarProyek = [
 ];
 console.table(profil.keahlian);
 console.table(daftarProyek);
+const judulProyek = daftarProyek.map((proyek) => proyek.judul);
+console.table(judulProyek);
 
 const selesai = daftarProyek.filter((proyek) => proyek.selesai);
 console.table(selesai);
