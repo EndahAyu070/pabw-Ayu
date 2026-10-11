@@ -24,6 +24,7 @@ const formatKeahlian = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatKeahlian(profil.keahlian));
 
+
 const daftarProyek = [
   { judul: "Aplikasi Laporan Kejahatan Digital", tahun: 2026, selesai: true },
   { judul: "Aplikasi Manajement Katering", tahun: 2026, selesai: true },
