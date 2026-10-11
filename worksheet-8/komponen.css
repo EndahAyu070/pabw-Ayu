@@ -1,0 +1,136 @@
+/* ---------- formulir ---------- */
+.form-kolom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+form.form-kolom { gap: var(--space-4); margin-top: var(--space-4); }
+
+label { font-size: var(--text-sm); font-weight: 600; }
+
+input, select, textarea {
+  font: inherit;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-fg);
+}
+
+textarea { min-height: 6rem; resize: vertical; }
+
+button {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  cursor: pointer;
+}
+
+button:hover { background: var(--color-focus); }
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* cadangan untuk peramban lama */
+@supports not selector(:user-invalid) {
+  input:invalid, textarea:invalid { border-color: var(--color-danger); }
+}
+
+input:user-invalid,
+textarea:user-invalid {
+  border-color: var(--color-danger);
+  border-width: 2px;
+}
+
+.pesan-galat { display: none; color: var(--color-danger); font-size: var(--text-sm); }
+
+input:user-invalid ~ .pesan-galat,
+textarea:user-invalid ~ .pesan-galat { display: block; }
+
+/* ---------- pengalih tema ---------- */
+.pengalih-tema { position: absolute; opacity: 0; width: 1px; height: 1px; }
+
+.tombol-tema {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--hero-fg);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--hero-fg);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.pengalih-tema:checked + .tombol-tema {
+  background: var(--hero-fg);
+  color: var(--hero-from);
+}
+
+.pengalih-tema:focus-visible + .tombol-tema {
+  outline: 2px solid var(--hero-fg);
+  outline-offset: 2px;
+}
+
+/* ---------- lencana & statistik ---------- */
+.lencana-daftar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-3);
+}
+
+.lencana-daftar li {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+}
+
+.statistik { list-style: none; padding: 0; margin-top: var(--space-3); }
+.statistik li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-bottom: 1px dashed var(--color-border);
+}
+.statistik strong { color: var(--color-primary); }
+
+/* ---------- tabel ---------- */
+table { width: 100%; border-collapse: collapse; background: var(--color-surface); }
+caption { padding-bottom: var(--space-2); font-weight: 600; text-align: left; }
+
+th, td {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+th { background: var(--color-primary); color: var(--color-surface); }
+tbody tr:nth-child(even) { background: var(--color-bg); }
+tbody tr:hover { background: var(--color-border); }
+
+/* ---------- gambar ---------- */
+.galeri-kartu { padding: 0; overflow: hidden; }
+
+.galeri-kartu img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--color-border);
+  transition: transform 0.3s ease;
+}
+
+.galeri-kartu:hover img { transform: scale(1.04); }
+.galeri-kartu > a, .galeri-kartu .bingkai { display: block; overflow: hidden; }
+
+figcaption { padding: var(--space-3) var(--space-4); font-size: var(--text-sm); }
