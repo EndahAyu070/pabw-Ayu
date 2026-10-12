@@ -25,3 +25,8 @@ Saya menggunakan AI sebagai alat bantu untuk memahami materi Flexbox dan Grid, m
 ## pertemuan 8 
 Dalam pengerjaan tugas ini, saya menggunakan AI sebagai alat bantu untuk memahami materi JavaScript ES6+, terutama dalam memahami penggunaan map(), filter(), dan find(), serta membantu mencari dan memahami penyebab error pada kode. AI juga membantu memberikan penjelasan ketika saya mengalami kesulitan dalam memahami soal dan kode.
 Kode, data profil, data proyek, dan isi halaman saya sesuaikan dan kerjakan sendiri. Saya juga melakukan pengujian kode, memperbaiki error, dan memastikan hasilnya berjalan sesuai dengan tugas yang diberikan.
+
+## Pertemuan 9
+### Deklarasi Penggunaan AI
+
+Saya menggunakan AI untuk membantu mencari dan memperbaiki error pada kode yang saya kerjakan. AI membantu menjelaskan penyebab error dan memberikan saran perbaikan agar kode dapat berjalan dengan baik. Setelah itu, saya mencoba memperbaiki kode di VS Code dan mengecek hasilnya melalui browser. Saya juga menggunakan AI untuk memahami bagian kode yang belum saya pahami. Untuk hasil akhirnya, saya tetap memeriksa dan memastikan sendiri apakah kode sudah berjalan sesuai dengan yang diharapkan.
