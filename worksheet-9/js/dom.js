@@ -1,4 +1,6 @@
-const wadah = document.querySelector("#daftar");
+import { daftarProyek } from "./app.js";
+
+ const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#kosong");
 
 function buatKartu(proyek) {
@@ -64,3 +66,55 @@ barisFilter.addEventListener("click", (event) => {
 });
 
 render(daftarProyek);
+
+const form = document.querySelector(".form-kolom");
+const kolomNama = document.querySelector("#nama");
+const kolomEmail = document.querySelector("#email");
+const kolomPesan = document.querySelector("#pesan");
+const tombolKirim = form.querySelector('button[type="submit"]');
+
+const kolomForm = [kolomNama, kolomEmail, kolomPesan];
+
+function periksaKolom(kolom) {
+  const wadahKolom = kolom.parentElement;
+  const pesanGalat = wadahKolom.querySelector(".pesan-galat");
+
+  let sah = kolom.value.trim() !== "";
+
+  if (kolom === kolomEmail && sah) {
+    sah = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(kolom.value.trim());
+  }
+
+  kolom.setAttribute("aria-invalid", String(!sah));
+  pesanGalat.hidden = sah;
+
+  return sah;
+}
+
+function periksaSemuaKolom() {
+  return kolomForm.map(periksaKolom).every(Boolean);
+}
+
+tombolKirim.disabled = !periksaSemuaKolom();
+
+kolomForm.forEach((kolom) => {
+  kolom.addEventListener("input", () => {
+    periksaKolom(kolom);
+    tombolKirim.disabled = !periksaSemuaKolom();
+  });
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const sah = periksaSemuaKolom();
+  tombolKirim.disabled = !sah;
+
+  if (!sah) {
+    const kolomBermasalah = kolomForm.find(
+      (kolom) => kolom.getAttribute("aria-invalid") === "true"
+    );
+
+    kolomBermasalah?.focus();
+  }
+});

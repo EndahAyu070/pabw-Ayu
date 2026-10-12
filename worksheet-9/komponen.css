@@ -134,3 +134,11 @@ tbody tr:hover { background: var(--color-border); }
 .galeri-kartu > a, .galeri-kartu .bingkai { display: block; overflow: hidden; }
 
 figcaption { padding: var(--space-3) var(--space-4); font-size: var(--text-sm); }
+.pesan-galat[hidden] {
+  display: none;
+}
+
+.pesan-galat {
+  color: #b42318;
+  font-size: var(--text-sm);
+}
