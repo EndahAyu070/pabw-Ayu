@@ -147,7 +147,20 @@
           <button type="submit">Kirim</button>
         </form>
       </section>
+<section id="proyek">
+  <h2>Daftar Proyek</h2>
+  <div id="filter">
+    <button type="button" class="filter" data-kategori="semua">
+      Semua
+    </button>
+    <button type="button" class="filter" data-kategori="selesai">
+      Selesai
+    </button>
+  </div>
 
+  <p id="kosong" hidden>Belum ada proyek yang ditampilkan.</p>
+  <ul id="daftar"></ul>
+</section>
     </div>
   </main>
 
@@ -159,5 +172,6 @@
 
 </div>
 <script type="module" src="js/app.js"></script>
+<script type="module" src="js/dom.js"></script>
 </body>
 </html>
