@@ -1,0 +1,41 @@
+/* ===== DASAR: berlaku di semua lebar, layar sempit lebih dulu ===== */
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+/* kolom tidak melebar karena teks panjang */
+.content > *,
+.grid > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+ 
+/* gambar tidak melebihi wadahnya */
+img { max-width: 100%; height: auto; }
+
+/* tabel lebar dapat digulir sendiri */
+.table-wrap { overflow-x: auto; }
+.table-wrap table { min-width: 36rem; }
+
+/* teks mengikuti ukuran huruf pengguna */
+p { font-size: 1rem; line-height: 1.6; }
+
+/* ===== TITIK HENTI 1: tablet, galeri dua kolom ===== */
+@media (min-width: 48rem) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== TITIK HENTI 2: desktop, sidebar bersanding dengan konten ===== */
+@media (min-width: 60rem) {
+  .content { grid-template-columns: 16rem 1fr; }
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .sidebar { position: sticky; top: var(--space-4); align-self: start; }
+}
