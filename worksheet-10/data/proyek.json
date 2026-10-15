@@ -1,4 +1,4 @@
  [
-  { "judul": "Aplikasi Laporan Kejahatan Digital", "tahun": 2026, "selesai": true },
-  { "judul": "Aplikasi Manajement Katering", "tahun": 2026, "selesai": true }
+  { "id": 1, "judul": "Halaman Profil Jejak Perjalanan", "tahun": 2026, "selesai": true },
+  { "id": 2, "judul": "Galeri Foto Perjalanan", "tahun": 2026, "selesai": true }
 ]
