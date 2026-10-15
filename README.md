@@ -30,3 +30,10 @@ Kode, data profil, data proyek, dan isi halaman saya sesuaikan dan kerjakan send
 ### Deklarasi Penggunaan AI
 
 Saya menggunakan AI untuk membantu mencari dan memperbaiki error pada kode yang saya kerjakan. AI membantu menjelaskan penyebab error dan memberikan saran perbaikan agar kode dapat berjalan dengan baik. Setelah itu, saya mencoba memperbaiki kode di VS Code dan mengecek hasilnya melalui browser. Saya juga menggunakan AI untuk memahami bagian kode yang belum saya pahami. Untuk hasil akhirnya, saya tetap memeriksa dan memastikan sendiri apakah kode sudah berjalan sesuai dengan yang diharapkan.
+
+## pertemuan 10
+## Penggunaan AI
+
+Saya menggunakan AI sebagai bantuan dalam memahami materi dan memperbaiki beberapa bagian kode yang belum saya pahami. AI membantu saya memahami `fetch()`, `async/await`, `try/catch`, JSON, serta hubungan antara `api.js`, `app.js`, dan `dom.js`.
+
+Saya tetap menjalankan dan memeriksa kode sendiri di VS Code dan browser. Kode yang digunakan saya sesuaikan dengan proyek saya, sedangkan data dan isi halaman merupakan hasil pekerjaan saya sendiri.
