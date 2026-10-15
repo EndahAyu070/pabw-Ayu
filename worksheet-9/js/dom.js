@@ -3,6 +3,7 @@ import { daftarProyek } from "./app.js";
  const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#kosong");
 
+
 function buatKartu(proyek) {
   const li = document.createElement("li");
   li.className = "kartu";
@@ -22,10 +23,11 @@ function buatKartu(proyek) {
   return li;
 }
 
-function render(daftar) {
+export function render(daftar) {
   wadah.textContent = "";
 
   if (daftar.length === 0) {
+    pesanKosong.textContent = "Belum ada data.";
     pesanKosong.hidden = false;
     return;
   }

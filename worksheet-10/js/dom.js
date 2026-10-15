@@ -2,6 +2,8 @@
 
  const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#kosong");
+const muatEl = document.querySelector("#muat");
+const barisFilter = document.querySelector("#filter");
 
 function buatKartu(proyek) {
   const li = document.createElement("li");
@@ -22,10 +24,11 @@ function buatKartu(proyek) {
   return li;
 }
 
-function render(daftar) {
+export function render(daftar) {
   wadah.textContent = "";
 
   if (daftar.length === 0) {
+    pesanKosong.textContent = "Belum ada data.";
     pesanKosong.hidden = false;
     return;
   }
@@ -40,6 +43,14 @@ function render(daftar) {
 
   wadah.append(fragmen);
 }
+export function aturMemuat(aktif) {
+  muatEl.hidden = !aktif;}
+
+export function tampilkanGalat(pesan) {
+  wadah.textContent = "";
+  pesanKosong.textContent = pesan;
+  pesanKosong.hidden = false;
+}
 
 function tandaiTombolAktif(tombolAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
@@ -47,26 +58,25 @@ function tandaiTombolAktif(tombolAktif) {
   });
 }
 
-const barisFilter = document.querySelector("#filter");
+export function pasangFilter(daftar) {
+  barisFilter.addEventListener("click", (event) => {
+    const tombol = event.target.closest("button");
+    if (!tombol) return;
 
-barisFilter.addEventListener("click", (event) => {
-  const tombol = event.target.closest("button");
-  if (!tombol) return;
+    const kategori = tombol.dataset.kategori; 
 
-  const kategori = tombol.dataset.kategori;
+    let terpilih;
 
-  const terpilih = daftarProyek.filter(
-    (proyek) =>
-      kategori === "semua" ||
-      (kategori === "selesai" && proyek.selesai)
-  );
+    if (kategori === "semua") {
+      terpilih = daftar;
+    } else if (kategori === "selesai") {
+      terpilih = daftar.filter((proyek) => proyek.selesai);
+    }
 
-  render(terpilih);
-  tandaiTombolAktif(tombol);
-});
-
-render(daftarProyek);
-
+    render(terpilih);
+    tandaiTombolAktif(tombol);
+  });
+}
 const form = document.querySelector(".form-kolom");
 const kolomNama = document.querySelector("#nama");
 const kolomEmail = document.querySelector("#email");
