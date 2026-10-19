@@ -4,6 +4,7 @@ export const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#kosong");
 const muatEl = document.querySelector("#muat");
 export const barisFilter = document.querySelector("#filter");
+export const tombolAturUlang = document.querySelector("#atur-ulang");
 
 function buatKartu(proyek, favorit) {
   const li = document.createElement("li");

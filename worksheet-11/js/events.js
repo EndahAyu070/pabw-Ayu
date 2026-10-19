@@ -1,7 +1,13 @@
-import { pilihKategori, tambahFavorit } from "./state.js";
+import {
+  pilihKategori,
+  tambahFavorit,
+  aturUlang
+} from "./state.js";
+
 import {
   barisFilter,
   wadah,
+  tombolAturUlang,
   form,
   tombolKirim,
   kolomForm,
@@ -10,23 +16,28 @@ import {
 } from "./dom.js";
 
 export function pasangPendengar() {
+
   barisFilter.addEventListener("click", (event) => {
     const tombol = event.target.closest("button");
+
     if (!tombol) return;
 
     const kategori = tombol.dataset.kategori;
 
-    let terpilih;
-
-    if (kategori === "semua") {
-      terpilih = state.daftarProyek;
-    } else if (kategori === "selesai") {
-      terpilih = state.daftarProyek.filter((proyek) => proyek.selesai);
+    if (kategori) {
+      pilihKategori(kategori);
     }
-
-    render(terpilih);
-    tandaiTombolAktif(tombol);
   });
+
+  wadah.addEventListener("click", (event) => {
+    const tombol = event.target.closest(".favorit");
+
+    if (!tombol) return;
+
+    tambahFavorit(Number(tombol.dataset.id));
+  });
+
+  tombolAturUlang.addEventListener("click", aturUlang);
 
   tombolKirim.disabled = !periksaSemuaKolom();
 
@@ -41,11 +52,13 @@ export function pasangPendengar() {
     event.preventDefault();
 
     const sah = periksaSemuaKolom();
+
     tombolKirim.disabled = !sah;
 
     if (!sah) {
       const kolomBermasalah = kolomForm.find(
-        (kolom) => kolom.getAttribute("aria-invalid") === "true"
+        (kolom) =>
+          kolom.getAttribute("aria-invalid") === "true"
       );
 
       kolomBermasalah?.focus();
