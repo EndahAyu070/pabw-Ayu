@@ -18,11 +18,30 @@ export function simpan(state) {
   localStorage.setItem(KUNCI, JSON.stringify(isi));
 }
 
-export function muat() {
+/*export function muat() {
   try {
     return JSON.parse(localStorage.getItem(KUNCI));
   } catch {
     return null; 
+  }
+}*/
+export function muat() {
+  try {
+    const teks = localStorage.getItem(KUNCI);
+
+    if (!teks) return null;
+
+    const isi = JSON.parse(teks);
+
+    if (isi?.versi !== VERSI) {
+      localStorage.removeItem(KUNCI);
+      return null;
+    }
+
+    return isi;
+  } catch {
+    localStorage.removeItem(KUNCI);
+    return null;
   }
 }
 
