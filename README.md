@@ -37,3 +37,55 @@ Saya menggunakan AI untuk membantu mencari dan memperbaiki error pada kode yang 
 Saya menggunakan AI sebagai bantuan dalam memahami materi dan memperbaiki beberapa bagian kode yang belum saya pahami. AI membantu saya memahami `fetch()`, `async/await`, `try/catch`, JSON, serta hubungan antara `api.js`, `app.js`, dan `dom.js`.
 
 Saya tetap menjalankan dan memeriksa kode sendiri di VS Code dan browser. Kode yang digunakan saya sesuaikan dengan proyek saya, sedangkan data dan isi halaman merupakan hasil pekerjaan saya sendiri. 
+
+# PABW Pertemuan 11
+## Struktur Modul
+Proyek menggunakan beberapa modul JavaScript dengan tugas yang berbeda:
+
+- `data.js` : menyimpan data profil dan fungsi pengolahan data.
+- `state.js` : mengelola state aplikasi dan localStorage.
+- `dom.js` : mengatur tampilan dan manipulasi DOM.
+- `events.js` : menangani interaksi pengguna.
+- `app.js` : menghubungkan seluruh modul dan menjalankan aplikasi.
+- `api.js` : mengambil data proyek dari sumber data JSON.
+
+## Fitur
+- Menampilkan daftar proyek.
+- Filter proyek berdasarkan status selesai.
+- Menambahkan proyek ke favorit.
+- Menyimpan kategori dan favorit menggunakan localStorage.
+- Memulihkan pilihan pengguna setelah halaman dimuat ulang.
+- Tombol Atur Ulang untuk menghapus pilihan yang tersimpan.
+- Menangani data localStorage yang rusak atau memiliki versi yang tidak sesuai.
+- Menampilkan pesan ketika data proyek gagal dimuat.
+
+## Penyimpanan Data
+Data yang disimpan di localStorage hanya berupa pilihan pengguna, yaitu:
+
+- Kategori yang sedang dipilih.
+- Daftar proyek favorit.
+- Versi penyimpanan.
+
+Data proyek dari server tidak disimpan di localStorage.
+
+## Penggunaan AI
+Dalam pengerjaan proyek ini, AI digunakan sebagai alat bantu untuk memahami materi dan membantu proses pengembangan kode.
+
+Bagian yang dibantu AI antara lain:
+- Memahami pembagian tanggung jawab setiap modul JavaScript.
+- Membantu mengecek dan memperbaiki error pada kode.
+- Membantu memahami penggunaan `localStorage`, `JSON.stringify()`, dan `JSON.parse()`.
+- Membantu mengecek alur state, event, dan render.
+- Membantu menyusun beberapa bagian dokumentasi README.
+
+Kode yang diberikan AI tidak langsung digunakan tanpa pemeriksaan. Setiap perubahan kode diperiksa kembali dengan menjalankan website, melihat hasil pada browser, dan mengecek Console untuk memastikan tidak terdapat error.
+
+## Hasil Pengujian
+Beberapa pengujian yang dilakukan:
+
+- Filter `Semua` dan `Selesai` dapat digunakan.
+- Proyek dapat ditambahkan ke favorit.
+- Pilihan kategori dan favorit tetap tersimpan setelah halaman dimuat ulang.
+- Data localStorage yang rusak dapat ditangani.
+- Data localStorage dengan versi yang tidak sesuai dapat dihapus.
+- Tombol Atur Ulang dapat mengembalikan state ke nilai awal.
