@@ -2,7 +2,7 @@ export const profil = {
   nama: "Endah Ayu Inten Sari",
   peran: "Mahasiswa Informatika yang suka menjelajah tempat baru",
   keahlian: ["HTML", "CSS", "JavaScript"],
-  jumlahProyek: 2
+  jumlahProyek: 3
 };
 
 export function buatPerkenalan({ nama, peran }) {
