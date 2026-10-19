@@ -3,7 +3,7 @@
  const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#kosong");
 const muatEl = document.querySelector("#muat");
-const barisFilter = document.querySelector("#filter");
+export const barisFilter = document.querySelector("#filter");
 
 function buatKartu(proyek) {
   const li = document.createElement("li");
@@ -33,13 +33,14 @@ export function render(daftar) {
     return;
   }
 
-  pesanKosong.hidden = true;
+   pesanKosong.hidden = true;
 
-  const fragmen = document.createDocumentFragment();
+   const fragmen = document.createDocumentFragment();
 
-  daftar.forEach((proyek) => {
-    fragmen.append(buatKartu(proyek));
-  });
+   daftar.forEach((proyek) => {
+     fragmen.append(buatKartu(proyek));
+   });
+  
 
   wadah.append(fragmen);
 }
@@ -52,13 +53,13 @@ export function tampilkanGalat(pesan) {
   pesanKosong.hidden = false;
 }
 
-function tandaiTombolAktif(tombolAktif) {
+export function tandaiTombolAktif(tombolAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
     tombol.classList.toggle("aktif", tombol === tombolAktif);
   });
 }
 
-export function pasangFilter(daftar) {
+/*export function pasangFilter(daftar) {
   barisFilter.addEventListener("click", (event) => {
     const tombol = event.target.closest("button");
     if (!tombol) return;
@@ -76,16 +77,16 @@ export function pasangFilter(daftar) {
     render(terpilih);
     tandaiTombolAktif(tombol);
   });
-}
-const form = document.querySelector(".form-kolom");
+}*/
+export const form = document.querySelector(".form-kolom");
 const kolomNama = document.querySelector("#nama");
 const kolomEmail = document.querySelector("#email");
 const kolomPesan = document.querySelector("#pesan");
-const tombolKirim = form.querySelector('button[type="submit"]');
+export const tombolKirim = form.querySelector('button[type="submit"]');
 
-const kolomForm = [kolomNama, kolomEmail, kolomPesan];
+export const kolomForm = [kolomNama, kolomEmail, kolomPesan];
 
-function periksaKolom(kolom) {
+export function periksaKolom(kolom) {
   const wadahKolom = kolom.parentElement;
   const pesanGalat = wadahKolom.querySelector(".pesan-galat");
 
@@ -101,7 +102,7 @@ function periksaKolom(kolom) {
   return sah;
 }
 
-function periksaSemuaKolom() {
+export function periksaSemuaKolom() {
   return kolomForm.map(periksaKolom).every(Boolean);
 }
 
