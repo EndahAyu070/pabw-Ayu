@@ -1,11 +1,11 @@
-// import { daftarProyek } from "./app.js";
+import { saring } from "./data.js";
 
- const wadah = document.querySelector("#daftar");
+export const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#kosong");
 const muatEl = document.querySelector("#muat");
 export const barisFilter = document.querySelector("#filter");
 
-function buatKartu(proyek) {
+function buatKartu(proyek, favorit) {
   const li = document.createElement("li");
   li.className = "kartu";
 
@@ -20,32 +20,47 @@ function buatKartu(proyek) {
     ? "Status: Selesai"
     : "Status: Belum selesai";
 
-  li.append(judul, tahun, status);
+  const tombol = document.createElement("button");
+  tombol.className = "favorit";
+  tombol.dataset.id = proyek.id;
+  tombol.textContent = favorit.includes(proyek.id) ? "★" : "☆";
+
+  li.append(judul, tahun, status, tombol);
   return li;
 }
 
-export function render(daftar) {
-  wadah.textContent = "";
+function tandaiTombolAktif(kategoriAktif) {
+  document.querySelectorAll("#filter button").forEach((tombol) => {
+    tombol.classList.toggle("aktif", tombol.dataset.kategori === kategoriAktif);
+  });
+}
 
-  if (daftar.length === 0) {
+export function render(state) {
+  wadah.textContent = "";
+  tandaiTombolAktif(state.kategoriAktif);
+
+  const tampil = saring(state.daftarProyek, state.kategoriAktif);
+
+  if (tampil.length === 0) {
     pesanKosong.textContent = "Belum ada data.";
     pesanKosong.hidden = false;
     return;
   }
 
-   pesanKosong.hidden = true;
+  pesanKosong.hidden = true;
 
-   const fragmen = document.createDocumentFragment();
+  const fragmen = document.createDocumentFragment();
 
-   daftar.forEach((proyek) => {
-     fragmen.append(buatKartu(proyek));
-   });
-  
+  tampil.forEach((proyek) => {
+    fragmen.append(buatKartu(proyek, state.favorit));
+  });
 
   wadah.append(fragmen);
 }
+
 export function aturMemuat(aktif) {
-  muatEl.hidden = !aktif;}
+  muatEl.hidden = !aktif;
+}
 
 export function tampilkanGalat(pesan) {
   wadah.textContent = "";
@@ -53,31 +68,6 @@ export function tampilkanGalat(pesan) {
   pesanKosong.hidden = false;
 }
 
-export function tandaiTombolAktif(tombolAktif) {
-  document.querySelectorAll("#filter button").forEach((tombol) => {
-    tombol.classList.toggle("aktif", tombol === tombolAktif);
-  });
-}
-
-/*export function pasangFilter(daftar) {
-  barisFilter.addEventListener("click", (event) => {
-    const tombol = event.target.closest("button");
-    if (!tombol) return;
-
-    const kategori = tombol.dataset.kategori; 
-
-    let terpilih;
-
-    if (kategori === "semua") {
-      terpilih = daftar;
-    } else if (kategori === "selesai") {
-      terpilih = daftar.filter((proyek) => proyek.selesai);
-    }
-
-    render(terpilih);
-    tandaiTombolAktif(tombol);
-  });
-}*/
 export const form = document.querySelector(".form-kolom");
 const kolomNama = document.querySelector("#nama");
 const kolomEmail = document.querySelector("#email");
@@ -105,27 +95,3 @@ export function periksaKolom(kolom) {
 export function periksaSemuaKolom() {
   return kolomForm.map(periksaKolom).every(Boolean);
 }
-
-tombolKirim.disabled = !periksaSemuaKolom();
-
-kolomForm.forEach((kolom) => {
-  kolom.addEventListener("input", () => {
-    periksaKolom(kolom);
-    tombolKirim.disabled = !periksaSemuaKolom();
-  });
-});
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const sah = periksaSemuaKolom();
-  tombolKirim.disabled = !sah;
-
-  if (!sah) {
-    const kolomBermasalah = kolomForm.find(
-      (kolom) => kolom.getAttribute("aria-invalid") === "true"
-    );
-
-    kolomBermasalah?.focus();
-  }
-});
