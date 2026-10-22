@@ -1,19 +1,15 @@
+<script setup>
+import { profil } from './data.js'
+import KepalaProfil from './components/KepalaProfil.vue'
+import TombolFilter from './components/TombolFilter.vue'
+import DaftarProyek from './components/DaftarProyek.vue'
+import FormKontak from './components/FormKontak.vue'
+</script>
+
 <template>
 <div class="page">
 
-  <header>
-    <div class="wadah header-baris">
-      <div>
-        <p class="kicker">Portofolio perjalanan</p>
-        <h1>Jejak perjalanan saya</h1>
-        <p>Catatan tempat yang pernah saya kunjungi, lengkap dengan lokasi dan waktu berkunjung.</p>
-      </div>
-      <div>
-        <input type="checkbox" id="tema" class="pengalih-tema">
-        <label for="tema" class="tombol-tema">Tema gelap</label>
-      </div>
-    </div>
-  </header>
+  <KepalaProfil :profil="profil" />
 
   <nav aria-label="Navigasi utama">
     <div class="wadah">
@@ -105,42 +101,13 @@
           </figure>
         </div>
 
-        <form class="form-kolom">
-          <h3>Tinggalkan pesan</h3>
-
-          <div class="form-kolom">
-            <label for="nama">Nama:</label>
-            <input type="text" id="nama" name="nama" required>
-            <span class="pesan-galat">Nama wajib diisi.</span>
-          </div>
-
-          <div class="form-kolom">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <span class="pesan-galat">Masukkan email yang valid.</span>
-          </div>
-
-          <div class="form-kolom">
-            <label for="pesan">Pesan:</label>
-            <textarea id="pesan" name="pesan" required></textarea>
-            <span class="pesan-galat">Pesan wajib diisi.</span>
-          </div>
-
-          <button type="submit">Kirim</button>
-        </form>
+        <FormKontak />
       </section>
 
       <section id="proyek">
         <h2>Daftar Proyek</h2>
-        <div id="filter">
-          <button type="button" class="filter" data-kategori="semua">Semua</button>
-          <button type="button" class="filter" data-kategori="selesai">Selesai</button>
-        </div>
-        <button id="atur-ulang">Atur ulang</button>
-
-        <p id="kosong" hidden>Belum ada proyek yang ditampilkan.</p>
-        <ul id="daftar"></ul>
-        <p id="muat" hidden>Memuat data...</p>
+        <TombolFilter />
+        <DaftarProyek />
       </section>
 
     </div>
